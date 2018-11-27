@@ -22,8 +22,8 @@ function gameArea(){
 }
 
 function runningMotherFucker(){
-    this.x = x;
-    this.y = y;
+    this.x = 90;
+    this.y = 220;
     this.srcX;
     this.srcY;
     this.sheetWidth = 2048;
@@ -32,12 +32,15 @@ function runningMotherFucker(){
     this.frameCountCols = 8; // the number of frames in the frame sheet 
     this.frameCountRows = 1;
     
-    this.width = sheetWidth / frameCountCols;
-    this.height = sheetHeight / frameCountRows;
+    this.width = this.sheetWidth / this.frameCountCols;
+    this.height = this.sheetHeight / this.frameCountRows;
     this.currentFrame = 0; 
     
     this.runner = new Image();
-    runner.src = "./images/Punk_Run/Punk_Run.png"
+    this.runner.src = "./images/Punk_Run/Punk_Run.png"
+    this.runner.onload = function(){
+        this.drawImage()
+      }.bind(this)
     
     this.updateFrame = function(){
         this.currentFrame = ++ this.currentFrame % this.frameCountCols; // 1 % 8 = 1, 2 % 8 = 1, ...., 8 % 8 = 1.
@@ -47,8 +50,8 @@ function runningMotherFucker(){
     }
     this.drawImage = function(){
         this.updateFrame();
-        this.context.drawImage(runner, this.srcX, this.srcY, this.width, this.height, this.x, this.y, this.width, this.height )
+        ctx.drawImage(this.runner, this.srcX, this.srcY, this.width, this.height, this.x, this.y, this.width, this.height )
     }
-    this.interval = setInterval(drawImage(), 100)
+    this.interval = setInterval(this.drawImage(), 100)
         console.log(this)
 }
