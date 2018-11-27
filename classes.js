@@ -7,7 +7,7 @@ function gameArea(){
     this.hellImage.src = "https://cdn1.vectorstock.com/i/1000x1000/81/00/fantasy-wide-sci-fi-martian-background-for-ui-game-vector-18888100.jpg";
     
     this.hellImage.onload = function(){
-        console.log(this);
+        //console.log(this);
         this.draw();
     }.bind(this)
     this.move = function(){
@@ -21,15 +21,34 @@ function gameArea(){
     }
 }
 
-function runner(){
-    this.spriteWidth = 100;
-    this.spriteHeight = 150;
-
-    this.rows = 1;
-    this.cols = 8;
-
-    this.trackRight = 0;
-    this.trackLeft = 1;
-
-    this.width = spriteWidth/cols;
+function runningMotherFucker(){
+    this.x = x;
+    this.y = y;
+    this.srcX;
+    this.srcY;
+    this.sheetWidth = 2048;
+    this.sheetHeight = 256;
+    
+    this.frameCountCols = 8; // the number of frames in the frame sheet 
+    this.frameCountRows = 1;
+    
+    this.width = sheetWidth / frameCountCols;
+    this.height = sheetHeight / frameCountRows;
+    this.currentFrame = 0; 
+    
+    this.runner = new Image();
+    runner.src = "./images/Punk_Run/Punk_Run.png"
+    
+    this.updateFrame = function(){
+        this.currentFrame = ++ this.currentFrame % this.frameCountCols; // 1 % 8 = 1, 2 % 8 = 1, ...., 8 % 8 = 1.
+            
+        this.srcX = this.currentFrame * this.width;
+        this.srcY = 0;
+    }
+    this.drawImage = function(){
+        this.updateFrame();
+        this.context.drawImage(runner, this.srcX, this.srcY, this.width, this.height, this.x, this.y, this.width, this.height )
+    }
+    this.interval = setInterval(drawImage(), 100)
+        console.log(this)
 }
