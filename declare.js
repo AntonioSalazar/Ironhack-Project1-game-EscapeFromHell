@@ -6,4 +6,5 @@ let ctx = canvas.getContext('2d');
 
 let hellBackground = new gameArea();
 let runner = new runningMotherFucker();
+let evil = new evilMotherFucker();
 let interval, frames = 0;

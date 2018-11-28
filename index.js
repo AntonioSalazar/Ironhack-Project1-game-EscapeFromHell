@@ -5,6 +5,7 @@ window.onload = function(){
         ctx.clearRect(0,0, canvas.width, canvas.height)
         hellBackground.draw()
         runner.drawImage()
+        evil.drawImage()
     }
 
     function startGame(){
