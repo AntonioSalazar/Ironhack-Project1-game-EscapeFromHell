@@ -26,37 +26,53 @@ function runningMotherFucker(){
     this.y = 230;
     this.srcX;
     this.srcY;
-    this.sheetWidth = 2048;
-    this.sheetHeight = 256;
+    this.sheetWidth = 2046;
+    this.sheetHeight = 250;
     this.gravity = 9.81;
-    this.isJumping = false;
-    
+    this.yVelocity = 0; 
+    this.isJumping = false;    
     this.frameCountCols = 8; // the number of frames in the frame sheet 
     this.frameCountRows = 1;
-    
     this.width = this.sheetWidth / this.frameCountCols;
-    console.log(this.width);
+    //console.log(this.width);
     this.height = this.sheetHeight / this.frameCountRows;
-    console.log(this.height);
-    this.currentFrame = 0; 
-    
+    //console.log(this.height);
+    this.currentFrame = 0;  
     this.runner = new Image();
     this.runner.src = "./images/Punk_Run/Punk_Run.png"
     this.runner.onload = function(){
                             this.drawImage()
                         }.bind(this)
     this.jump = function(){
-        this.y -= 120;
+        this.y -= 140;
+        this.isJumping = true;
     }
-    
+
+    this.hitBottom = function(){
+        this.ground = canvas.height - this.height;
+        //console.log(this.ground); // = 300
+        if (this.y  > this.ground) {
+            console.log(this.y);
+            this.isJumping = false;
+            this.y = this.ground;
+            this.yVelocity = 0;
+        }
+        clearInterval(this.interval)
+    }
+ 
     this.drawImage = function(){
         this.updateFrame();
-        ctx.drawImage(this.runner, this.srcX, this.srcY, this.width, this.height, this.x, this.y, this.width, this.height )
+        ctx.drawImage(this.runner, this.srcX, this.srcY, this.width, this.height, this.x, this.y, this.width, this.height );
+        this.yVelocity -= 1;
+        this.y -= this.yVelocity;
+        this.yVelocity *= 3;  
     }
+
     this.updateFrame = function(){
         this.currentFrame =++ this.currentFrame % this.frameCountCols; // 1 % 8 = 1, 2 % 8 = 2, ...., 8 % 8 = 1.
         this.srcX = this.currentFrame * this.width;
         this.srcY = 0;
+        this.hitBottom();
     }
     
     this.interval = setInterval(this.drawImage(), 100)
