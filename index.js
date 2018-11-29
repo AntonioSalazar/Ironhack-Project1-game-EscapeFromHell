@@ -6,6 +6,7 @@ window.onload = function(){
         hellBackground.draw()
         runner.drawImage()
         evil.drawImage()
+        drawBrick()
     }
 
     function startGame(){

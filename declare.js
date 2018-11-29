@@ -8,3 +8,4 @@ let hellBackground = new gameArea();
 let runner = new runningMotherFucker();
 let evil = new evilMotherFucker();
 let interval, frames = 0;
+let brickObstaclesArray = [];

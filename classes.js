@@ -111,3 +111,17 @@ function evilMotherFucker(){
     }
     this.interval = setInterval(this.drawImage(), 1000)
 }
+
+function obstacleBrick(){ //should be bricks
+    this.x = canvas.width
+    this.y = 300
+    this.width = 150
+    this.height = 150
+    this.brick = new Image();
+    this.brick.src = "images/obstacles/Bricks/brick_1.png"
+
+    this.draw = function(){
+        this.x--;
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+    }
+}
