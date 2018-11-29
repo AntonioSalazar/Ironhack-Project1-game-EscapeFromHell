@@ -44,12 +44,12 @@ function runningMotherFucker(){
                             this.drawImage()
                         }.bind(this)
     this.jump = function(){
-        this.y -= 140;
+        this.y -= 200;
         this.isJumping = true;
     }
 
     this.hitBottom = function(){
-        this.ground = canvas.height - this.height;
+        this.ground = 230;
         //console.log(this.ground); // = 300
         if (this.y  > this.ground) {
             console.log(this.y);
@@ -65,7 +65,7 @@ function runningMotherFucker(){
         ctx.drawImage(this.runner, this.srcX, this.srcY, this.width, this.height, this.x, this.y, this.width, this.height );
         this.yVelocity -= 1;
         this.y -= this.yVelocity;
-        this.yVelocity *= 3;  
+        this.yVelocity *= 9;  
     }
 
     this.updateFrame = function(){
