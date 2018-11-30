@@ -1,12 +1,10 @@
-function generateBrickObstacle(){
-  if(!(frames % 300 === 0)) return
-  let singleObstacle = new obstacleBrick();
-  brickObstaclesArray.push(singleObstacle);
+function generateObstacleBrick() {
+  //if(!(frames % 300 === 0)) return
+   let brickObst = new brick()
+   brickObstaclesArray.push(brickObst)
 }
-
-function drawBrick(){
-  for (i = 0; i < myObstacles.length; i += 1) {
-    myObstacles[i].x += -1;
-    myObstacles[i].update();
-  }
+function drawBrick() {
+  brickObstaclesArray.forEach(function(obstacle) {
+    obstacle.draw()
+  })
 }

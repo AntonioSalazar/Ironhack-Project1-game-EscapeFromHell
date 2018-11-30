@@ -5,7 +5,7 @@ function gameArea(){
     this.height = 800;
     this.hellImage = new Image();
     this.hellImage.src = "https://cdn1.vectorstock.com/i/1000x1000/81/00/fantasy-wide-sci-fi-martian-background-for-ui-game-vector-18888100.jpg";
-    
+    this.minGap = 256;
     this.hellImage.onload = function(){
         //console.log(this);
         this.draw();
@@ -112,16 +112,15 @@ function evilMotherFucker(){
     this.interval = setInterval(this.drawImage(), 1000)
 }
 
-function obstacleBrick(){ //should be bricks
+function brick( ){
     this.x = canvas.width
-    this.y = 300
-    this.width = 150
-    this.height = 150
-    this.brick = new Image();
-    this.brick.src = "images/obstacles/Bricks/brick_1.png"
-
+    this.y = 430
+    this.width = 50
+    this.height = 50
+    this.brick = new Image()
+    this.brick.src = "images/obstacles/Cactus/single_cactus_game_ornament.png"
     this.draw = function(){
-        this.x--;
-        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+      this.x--
+      ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
     }
 }

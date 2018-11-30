@@ -3,7 +3,8 @@ addEventListener("keydown", function(e){
     runner.jump()
   }
 
-  else if(e.keyCode === 70){
-    drawBrick()
+  else if(e.keyCode === 70){ // f letter
+    
+    generateObstacleBrick()
   }
 })

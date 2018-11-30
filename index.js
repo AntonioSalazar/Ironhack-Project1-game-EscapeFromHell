@@ -1,7 +1,7 @@
 window.onload = function(){
     function update(){
         frames++
-
+        //generateObstacleBrick()
         ctx.clearRect(0,0, canvas.width, canvas.height)
         hellBackground.draw()
         runner.drawImage()
@@ -10,7 +10,7 @@ window.onload = function(){
     }
 
     function startGame(){
-        interval = setInterval(update, 1000/10)
+        interval = setInterval(update, 1000/20)
     }
 
     startGame()
