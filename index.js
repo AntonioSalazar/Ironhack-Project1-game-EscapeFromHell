@@ -8,6 +8,7 @@ window.onload = function(){
         hellBackground.frames += 1;
         runner.drawImage()
         evil.drawImage()
+        evil.evilWin()
         drawBrick()
         checkCollision()
 

@@ -25,7 +25,7 @@ function gameArea(){
         ctx.font = "16px Arial";
         ctx.fillStyle = "#0095DD";
         ctx.fillText("You have 1 minute! try to escape!: " + this.counterTimer , 350, 50)
-        if (this.counterTimer === 60) {
+        if (this.counterTimer === 120) {
             console.log("TIMES OVER!!!....BITCH!");
             ctx.font = "30px Arial";
             ctx.fillText("TIMES OVER!!!....BITCH!!!!",300,200);
@@ -94,10 +94,12 @@ function runningMotherFucker(){
                (this.y + this.height > brick.y)
     }
     //console.log(this.width);
+
+
     this.interval = setInterval(this.drawImage(), 1000)
 }
 
-function evilMotherFucker(){
+function tinyEvilMtfkr(){
     this.x = 50;
     this.y = 330;
     this.srcX;
@@ -128,6 +130,13 @@ function evilMotherFucker(){
         this.updateFrame();
         ctx.drawImage(this.runner, this.srcX, this.srcY, this.width, this.height, this.x, this.y, this.width, this.height )
     }
+
+    this.evilWin = function(){
+        if (evil.x === runner.x) {
+            console.log("you will be my dinner!");
+        }
+    }
+
     this.interval = setInterval(this.drawImage(), 1000)
 }
 
