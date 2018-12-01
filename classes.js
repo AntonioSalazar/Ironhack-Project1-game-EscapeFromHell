@@ -76,12 +76,12 @@ function runningMotherFucker(){
     }
 
     this.isTouching = function(brick){
-        return (this.x < brick.x + brick.width) &&
-               (this.x + this.width > brick.x)  &&
+        return (this.x + 40 < brick.x + brick.width) &&
+               (this.x + this.width - 40> brick.x)  &&
                (this.y < brick.y + brick.height) &&
                (this.y + this.height > brick.y)
     }
-    console.log(this.width);
+    //console.log(this.width);
     this.interval = setInterval(this.drawImage(), 1000)
 }
 
