@@ -4,10 +4,13 @@ window.onload = function(){
         
         ctx.clearRect(0,0, canvas.width, canvas.height)
         hellBackground.draw()
+        hellBackground.counter()
+        hellBackground.frames += 1;
         runner.drawImage()
         evil.drawImage()
         drawBrick()
         checkCollision()
+
     }
 
     function startGame(){

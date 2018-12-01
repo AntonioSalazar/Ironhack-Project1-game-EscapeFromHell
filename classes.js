@@ -3,11 +3,11 @@ function gameArea(){
     this.x = 0;
     this.width = 1000;
     this.height = 800;
+    this.frames = 0;
     this.hellImage = new Image();
     this.hellImage.src = "https://cdn1.vectorstock.com/i/1000x1000/81/00/fantasy-wide-sci-fi-martian-background-for-ui-game-vector-18888100.jpg";
     this.minGap = 256;
     this.hellImage.onload = function(){
-        //console.log(this);
         this.draw();
     }.bind(this)
     this.move = function(){
@@ -19,7 +19,18 @@ function gameArea(){
         ctx.drawImage(this.hellImage, this.x, this.y, this.width, this.height)
         ctx.drawImage(this.hellImage, this.x + this.width, this.y, this.width, this.height)
     }
+   
+    this.counter = function(){
+        this.counterTimer = (Math.floor(this.frames/16))
+        ctx.font = "16px Arial";
+        ctx.fillStyle = "#0095DD";
+        ctx.fillText("You have 1 minute! try to escape!: " + this.counterTimer , 350, 50)
+        if (this.counterTimer === 60) {
+            //console.log("you loose");
+        }
+    }
 }
+
 
 function runningMotherFucker(){
     this.x = 550;
@@ -35,9 +46,7 @@ function runningMotherFucker(){
     this.frameCountCols = 8; // the number of frames in the frame sheet 
     this.frameCountRows = 1;
     this.width = this.sheetWidth / this.frameCountCols;
-    //console.log(this.width);
     this.height = this.sheetHeight / this.frameCountRows;
-    //console.log(this.height);
     this.currentFrame = 0;  
     this.runner = new Image();
     this.runner.src = "./images/Punk_Run/Punk_Run.png"
@@ -51,7 +60,6 @@ function runningMotherFucker(){
 
     this.hitBottom = function(){
         this.ground = 230;
-        //console.log(this.ground); // = 300
         if (this.y  > this.ground) {
             this.isJumping = false;
             this.y = this.ground;
