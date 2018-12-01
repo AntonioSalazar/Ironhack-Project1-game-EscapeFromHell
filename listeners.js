@@ -4,7 +4,6 @@ addEventListener("keydown", function(e){
   }
 
   else if(e.keyCode === 70){ // f letter
-    
     generateObstacleBrick()
   }
 })

@@ -28,8 +28,9 @@ function runningMotherFucker(){
     this.srcY;
     this.sheetWidth = 2046;
     this.sheetHeight = 250;
-    this.gravity = 9.81;
+    this.gravity = 5;
     this.yVelocity = 0; 
+    this.xVelocity = 0;
     this.isJumping = false;    
     this.frameCountCols = 8; // the number of frames in the frame sheet 
     this.frameCountRows = 1;
@@ -43,8 +44,8 @@ function runningMotherFucker(){
     this.runner.onload = function(){
                             this.drawImage()
                         }.bind(this)
-    this.jump = function(){
-        this.y -= 200;
+    this.jump = function(){     
+        this.y -= 180;
         this.isJumping = true;
     }
 
@@ -52,10 +53,9 @@ function runningMotherFucker(){
         this.ground = 230;
         //console.log(this.ground); // = 300
         if (this.y  > this.ground) {
-            console.log(this.y);
             this.isJumping = false;
             this.y = this.ground;
-            this.yVelocity = 0;
+            this.yVelocity = 1;
         }
         clearInterval(this.interval)
     }
@@ -65,7 +65,7 @@ function runningMotherFucker(){
         ctx.drawImage(this.runner, this.srcX, this.srcY, this.width, this.height, this.x, this.y, this.width, this.height );
         this.yVelocity -= 1;
         this.y -= this.yVelocity;
-        this.yVelocity *= 9;  
+        this.yVelocity *= 0.90;  
     }
 
     this.updateFrame = function(){
@@ -74,8 +74,15 @@ function runningMotherFucker(){
         this.srcY = 0;
         this.hitBottom();
     }
-    
-    this.interval = setInterval(this.drawImage(), 100)
+
+    this.isTouching = function(brick){
+        return (this.x < brick.x + brick.width) &&
+               (this.x + this.width > brick.x)  &&
+               (this.y < brick.y + brick.height) &&
+               (this.y + this.height > brick.y)
+    }
+    console.log(this.width);
+    this.interval = setInterval(this.drawImage(), 1000)
 }
 
 function evilMotherFucker(){
@@ -118,7 +125,7 @@ function brick( ){
     this.width = 50
     this.height = 50
     this.brick = new Image()
-    this.brick.src = "images/obstacles/Cactus/single_cactus_game_ornament.png"
+    this.brick.src = "images/obstacles/Bricks/brick_2.png"
     this.draw = function(){
       this.x--
       ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
