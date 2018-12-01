@@ -22,12 +22,12 @@ function gameArea(){
    
     this.counter = function(){
         this.counterTimer = (Math.floor(this.frames/16))
-        ctx.font = "16px Arial";
-        ctx.fillStyle = "#0095DD";
-        ctx.fillText("You have 1 minute! try to escape!: " + this.counterTimer , 350, 50)
-        if (this.counterTimer === 120) {
+        ctx.font = "40px VT323";
+        ctx.fillStyle = "white";
+        ctx.fillText("You have 1 minute! try to escape!: " + this.counterTimer , 200, 50)
+        if (this.counterTimer === 60) {
             console.log("TIMES OVER!!!....BITCH!");
-            ctx.font = "30px Arial";
+            ctx.font = "30px VT323";
             ctx.fillText("TIMES OVER!!!....BITCH!!!!",300,200);
             clearInterval(interval)
             interval = 0
@@ -133,7 +133,12 @@ function tinyEvilMtfkr(){
 
     this.evilWin = function(){
         if (evil.x === runner.x) {
-            console.log("you will be my dinner!");
+            //console.log("you will be my dinner!");
+            console.log("TIMES OVER!!!....BITCH!");
+            ctx.font = "30px Arial";
+            ctx.fillText("YOU WILL NEVER ESCAPE FROM HELL!!!....BITCH!!!!",100,200);
+            clearInterval(interval)
+            interval = 0
         }
     }
 
