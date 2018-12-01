@@ -15,7 +15,8 @@ function checkCollision(){
        console.log("touching");
        runner.x -= 50;
        brickObstaclesArray.pop();
-    }
+    } 
   })
+  
 }
 

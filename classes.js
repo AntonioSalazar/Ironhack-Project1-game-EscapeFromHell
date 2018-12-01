@@ -26,7 +26,11 @@ function gameArea(){
         ctx.fillStyle = "#0095DD";
         ctx.fillText("You have 1 minute! try to escape!: " + this.counterTimer , 350, 50)
         if (this.counterTimer === 60) {
-            //console.log("you loose");
+            console.log("TIMES OVER!!!....BITCH!");
+            ctx.font = "30px Arial";
+            ctx.fillText("TIMES OVER!!!....BITCH!!!!",300,200);
+            clearInterval(interval)
+            interval = 0
         }
     }
 }
