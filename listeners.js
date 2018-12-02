@@ -5,5 +5,18 @@ addEventListener("keydown", function(e){
 
   else if(e.keyCode === 70){ // f letter
     generateObstacleBrick()
+  } else if(e.keyCode === 66){
+    generateObstacleBeer()
   }
+
+  // switch (e.keyCode) {
+  //   case 32:
+  //     runner.jump
+  //     break;
+    
+  //   case 70:
+  //     generateObstacleBrick()
+  //     break;
+  // }
+
 })

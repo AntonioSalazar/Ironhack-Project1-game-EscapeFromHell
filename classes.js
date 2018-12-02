@@ -157,3 +157,16 @@ function brick( ){
       ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
     }
 }
+
+function Beer( ){
+    this.x = canvas.width
+    this.y = 430
+    this.width = 50
+    this.height = 50
+    this.brick = new Image()
+    this.brick.src = "images/obstacles/Beer/Beer.png"
+    this.draw = function(){
+      this.x--
+      ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
+    }
+}

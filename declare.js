@@ -9,4 +9,4 @@ let runner = new runningMotherFucker();
 let evil = new tinyEvilMtfkr();
 let interval, frames = 0;
 frames++
-let brickObstaclesArray = [];
+let obstacles = [];

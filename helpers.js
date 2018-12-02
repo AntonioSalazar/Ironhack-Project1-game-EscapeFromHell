@@ -1,20 +1,25 @@
 function generateObstacleBrick() {
    let brickObst = new brick()
-   brickObstaclesArray.push(brickObst)
+   obstacles.push(brickObst)
 }
 
-function drawBrick() {
-  brickObstaclesArray.forEach(function(obstacle) {
+function generateObstacleBeer(){
+  let beerObst = new Beer()
+  obstacles.push(beerObst)
+}
+
+function drawObstacle() {
+  obstacles.forEach(function(obstacle) {
     obstacle.draw()
   })
 }
 
 function checkCollision(){
-  brickObstaclesArray.forEach(function(obstacle){
+  obstacles.forEach(function(obstacle){
     if(runner.isTouching(obstacle)){
        console.log("touching");
        runner.x -= 50;
-       brickObstaclesArray.shift();
+       obstacles.shift();
     } 
   })
   

@@ -9,9 +9,8 @@ window.onload = function(){
         runner.drawImage()
         evil.drawImage()
         evil.evilWin()
-        drawBrick()
+        drawObstacle()
         checkCollision()
-
     }
 
     function startGame(){
