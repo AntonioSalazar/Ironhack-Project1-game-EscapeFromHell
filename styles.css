@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=VT323');
 
+@font-face{
+    font-family: pureEvil;
+    src: url(fonts/puree____2.ttf)
+}
 
 * {
     margin: 0;
@@ -13,9 +17,36 @@
      background: url("images/imagesForHtmlFile/skulls.jpg");
      background-repeat: no-repeat;
      background-size: cover;
-
 }
 
 canvas{
     font-family: "VT323";
+}
+
+#main-section{
+    margin-top: 50px;
+    background: red;
+    font-family: pureEvil;
+    color: yellow;
+    width: 1000px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+p{
+    font-size: 9rem;
+    color: white;
+}
+
+a{
+    font-size: 4rem;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: yellow;
 }
