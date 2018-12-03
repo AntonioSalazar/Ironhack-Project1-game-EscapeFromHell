@@ -170,3 +170,43 @@ function Beer( ){
       ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
     }
 }
+
+function Drug(){
+    this.x = canvas.width
+    this.y = 370
+    this.width = 100
+    this.height = 100
+    this.brick = new Image()
+    this.brick.src = "images/obstacles/Drugs/blunt.png"
+    this.draw = function(){
+      this.x--
+      ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
+    }
+}
+
+function Cigarrete(){
+    this.x = canvas.width
+    this.y = 370
+    this.width = 100
+    this.height = 100
+    this.brick = new Image()
+    this.brick.src = "images/obstacles/Drugs/cigarrete.png"
+    this.draw = function(){
+      this.x--
+      ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
+    }
+}
+
+function Porn(){
+    this.x = canvas.width
+    this.y = 370
+    this.width = 70
+    this.height = 90
+    this.brick = new Image()
+    this.brick.src = "images/obstacles/Drugs/playboy.png"
+    this.draw = function(){
+      this.x--
+      ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
+    }
+}
+
