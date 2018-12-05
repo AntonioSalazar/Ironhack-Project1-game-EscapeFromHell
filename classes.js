@@ -25,7 +25,7 @@ function gameArea(){
         ctx.font = "40px VT323";
         ctx.fillStyle = "white";
         ctx.fillText("You have 1 minute! try to escape!: " + this.counterTimer , 200, 50)
-        if (this.counterTimer === 160) {
+        if (this.counterTimer === 120) {
             console.log("TIMES OVER!!!....BITCH!");
             ctx.font = "30px VT323";
             ctx.fillText("TIMES OVER!!!....BITCH!!!!",300,200);
@@ -137,6 +137,7 @@ function tinyEvilMtfkr(){
             console.log("TIMES OVER!!!....BITCH!");
             ctx.font = "30px VT323";
             ctx.fillText("YOU WILL NEVER ESCAPE FROM HELL!!!....BITCH!!!!",200,200);
+            ctx.fillText("Devil Wins!!", 400, 250)
             clearInterval(interval)
             interval = 0
         }

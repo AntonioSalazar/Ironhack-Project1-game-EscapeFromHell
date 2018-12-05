@@ -30,11 +30,12 @@ canvas{
 
 #main-section{
     margin-top: 50px;
+    margin-bottom: 100px;
     background: red;
     font-family: MetalMania-Regular;
     color: yellow;
     width: 1000px;
-    height: 600px;
+    height: 400px;
     display: flex;
     align-items: center;
     flex-direction: column;
