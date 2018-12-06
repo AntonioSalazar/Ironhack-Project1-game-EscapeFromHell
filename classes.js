@@ -25,10 +25,10 @@ function gameArea(){
         ctx.font = "40px VT323";
         ctx.fillStyle = "white";
         ctx.fillText("You have 1 minute! try to escape!: " + this.counterTimer , 200, 50)
-        if (this.counterTimer === 120) {
-            console.log("TIMES OVER!!!....BITCH!");
+        if (this.counterTimer === 60) {
             ctx.font = "30px VT323";
             ctx.fillText("TIMES OVER!!!....BITCH!!!!",300,200);
+            ctx.fillText("RUNNER WINS!!!!",360,250);
             clearInterval(interval)
             interval = 0
         }
@@ -140,7 +140,7 @@ function tinyEvilMtfkr(){
             ctx.fillText("Devil Wins!!", 400, 250)
             clearInterval(interval)
             interval = 0
-        }
+        } 
     }
 
     this.interval = setInterval(this.drawImage(), 1000)
