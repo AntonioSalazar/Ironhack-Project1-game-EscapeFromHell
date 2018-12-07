@@ -33,7 +33,7 @@ function checkCollision(){
   obstacles.forEach(function(obstacle){
     if(runner.isTouching(obstacle)){
        console.log("touching");
-       runner.x -= 90;
+       runner.x -= 50;
        obstacles.shift();
     } 
   })

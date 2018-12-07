@@ -6,7 +6,7 @@ function gameArea(){
     this.frames = 0;
     this.hellImage = new Image();
     this.hellImage.src = "https://cdn1.vectorstock.com/i/1000x1000/81/00/fantasy-wide-sci-fi-martian-background-for-ui-game-vector-18888100.jpg";
-    this.minGap = 100;
+    this.minGap = 256;
     this.hellImage.onload = function(){
         this.draw();
     }.bind(this)
@@ -88,8 +88,8 @@ function runningMotherFucker(){
     }
 
     this.isTouching = function(brick){
-        return (this.x - 50 < brick.x  + brick.width) &&
-               (this.x + this.width - 50> brick.x)  &&
+        return (this.x + 40 < brick.x + brick.width) &&
+               (this.x + this.width - 40> brick.x)  &&
                (this.y < brick.y + brick.height) &&
                (this.y + this.height > brick.y)
     }
@@ -177,11 +177,11 @@ function Beer( ){
 
 function Drug(){
     this.x = canvas.width
-    this.y = 390
+    this.y = 370
     this.width = 100
     this.height = 100
     this.brick = new Image()
-    this.brick.src = "images/obstacles/Drugs/drugs2.png"
+    this.brick.src = "images/obstacles/Drugs/blunt.png"
     this.draw = function(){
       this.x--
       ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
@@ -194,7 +194,7 @@ function Cigarrete(){
     this.width = 100
     this.height = 100
     this.brick = new Image()
-    this.brick.src = "images/obstacles/Drugs/cigarrete3.png"
+    this.brick.src = "images/obstacles/Drugs/cigarrete2.png"
     this.draw = function(){
       this.x--
       ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
@@ -203,7 +203,7 @@ function Cigarrete(){
 
 function Porn(){
     this.x = canvas.width
-    this.y = 390
+    this.y = 370
     this.width = 70
     this.height = 90
     this.brick = new Image()
