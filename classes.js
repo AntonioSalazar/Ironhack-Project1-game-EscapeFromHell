@@ -128,10 +128,7 @@ function tinyEvilMtfkr(){
     }
     this.drawImage = function(){
         this.updateFrame();
-        ctx.save();
-        ctx.scale(2, 2);
-        ctx.drawImage(this.runner, this.srcX, this.srcY, this.width, this.height, this.x/3.9, this.y/3.8, this.width, this.height )
-        ctx.restore();
+        ctx.drawImage(this.runner, this.srcX, this.srcY, this.width, this.height, this.x, this.y, this.width, this.height )
     }
 
     this.evilWin = function(){
@@ -146,7 +143,7 @@ function tinyEvilMtfkr(){
         } 
     }
 
-    this.interval = setInterval(this.drawImage(), 3000)
+    this.interval = setInterval(this.drawImage(), 1000)
 }
 
 function brick( ){
@@ -177,11 +174,11 @@ function Beer( ){
 
 function Drug(){
     this.x = canvas.width
-    this.y = 370
+    this.y = 390
     this.width = 100
     this.height = 100
     this.brick = new Image()
-    this.brick.src = "images/obstacles/Drugs/blunt.png"
+    this.brick.src = "images/obstacles/Drugs/drugs2.png"
     this.draw = function(){
       this.x--
       ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
@@ -203,7 +200,7 @@ function Cigarrete(){
 
 function Porn(){
     this.x = canvas.width
-    this.y = 370
+    this.y = 390
     this.width = 70
     this.height = 90
     this.brick = new Image()
