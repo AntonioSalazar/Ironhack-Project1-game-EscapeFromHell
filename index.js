@@ -14,7 +14,7 @@ window.onload = function(){
     }
 
     function startGame(){
-        interval = setInterval(update, 5000/280)
+        interval = setInterval(update, 5000/80)
     }
 
     

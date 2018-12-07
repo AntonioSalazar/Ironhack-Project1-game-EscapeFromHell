@@ -53,7 +53,7 @@ function runningMotherFucker(){
     this.height = this.sheetHeight / this.frameCountRows;
     this.currentFrame = 0;  
     this.runner = new Image();
-    this.runner.src = "./images/Punk_Run/Punk_Run.png"
+    this.runner.src = "images/mariachi/mariachiSprite.png"
     this.runner.onload = function(){
                             this.drawImage()
                         }.bind(this)
@@ -101,21 +101,21 @@ function runningMotherFucker(){
 
 function tinyEvilMtfkr(){
     this.x = 50;
-    this.y = 330;
+    this.y = 200;
     this.srcX;
     this.srcY;
-    this.sheetWidth = 1000;
-    this.sheetHeight = 463;
+    this.sheetWidth = 2046;
+    this.sheetHeight = 250;
     
-    this.frameCountCols = 10; // the number of frames in the frame sheet 
-    this.frameCountRows = 3;
+    this.frameCountCols = 8; // the number of frames in the frame sheet 
+    this.frameCountRows = 1;
     
     this.width = this.sheetWidth / this.frameCountCols;
     this.height = this.sheetHeight / this.frameCountRows;
     this.currentFrame = 0; 
     
     this.runner = new Image();
-    this.runner.src = "./images/tinyEvilMtfkr/blackDemon.png"
+    this.runner.src = "images/flyingDemonBought/sprite_devil2.png"
     this.runner.onload = function(){
         this.drawImage()
       }.bind(this)
