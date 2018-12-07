@@ -132,7 +132,7 @@ function tinyEvilMtfkr(){
     }
 
     this.evilWin = function(){
-        if (evil.x === runner.x) {
+        if (evil.x  === runner.x) {
             //console.log("you will be my dinner!");
             console.log("TIMES OVER!!!....BITCH!");
             ctx.font = "30px VT323";
