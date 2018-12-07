@@ -128,7 +128,10 @@ function tinyEvilMtfkr(){
     }
     this.drawImage = function(){
         this.updateFrame();
-        ctx.drawImage(this.runner, this.srcX, this.srcY, this.width, this.height, this.x, this.y, this.width, this.height )
+        ctx.save();
+        ctx.scale(2, 2);
+        ctx.drawImage(this.runner, this.srcX, this.srcY, this.width, this.height, this.x/3.9, this.y/3.8, this.width, this.height )
+        ctx.restore();
     }
 
     this.evilWin = function(){
@@ -143,7 +146,7 @@ function tinyEvilMtfkr(){
         } 
     }
 
-    this.interval = setInterval(this.drawImage(), 1000)
+    this.interval = setInterval(this.drawImage(), 3000)
 }
 
 function brick( ){
