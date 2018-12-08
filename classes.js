@@ -11,7 +11,7 @@ function gameArea(){
         this.draw();
     }.bind(this)
     this.move = function(){
-        this.x--
+        this.x-= 20
         if (this.x < -canvas.width) this.x = 0 ;
     }
     this.draw = function(){
@@ -25,10 +25,10 @@ function gameArea(){
         ctx.font = "40px VT323";
         ctx.fillStyle = "white";
         ctx.fillText("You have 1 minute! try to escape!: " + this.counterTimer , 200, 50)
-        if (this.counterTimer === 160) {
+        if (this.counterTimer === 60) {
             ctx.font = "30px VT323";
-            ctx.fillText("TIMES OVER!!!....BITCH!!!!",300,200);
-            ctx.fillText("RUNNER WINS!!!!",360,250);
+            ctx.fillText("TIMES OVER!!!....BITCH!!!!",330,180);
+            ctx.fillText("GOD WINS!....I MEAN...THE MARIACHI RUNNING AT THE FRONT WINS!!!!",150,230);
             clearInterval(interval)
             interval = 0
         }
@@ -58,7 +58,7 @@ function runningMotherFucker(){
                             this.drawImage()
                         }.bind(this)
     this.jump = function(){     
-        this.y -= 180;
+        this.y -= 210;
         this.isJumping = true;
     }
 
@@ -78,7 +78,7 @@ function runningMotherFucker(){
         this.yVelocity -= 3;
         this.y -= this.yVelocity;
         this.yVelocity *= 0.90;  
-        console.log(this.x);
+        //console.log(this.x);
     }
 
     this.updateFrame = function(){
@@ -130,7 +130,7 @@ function tinyEvilMtfkr(){
     this.drawImage = function(){
         this.updateFrame();
         ctx.drawImage(this.runner, this.srcX, this.srcY, this.width, this.height, this.x, this.y, this.width, this.height )
-        console.log(this.x);
+        //console.log(this.x);
     }
 
     this.evilWin = function(){
@@ -148,7 +148,7 @@ function tinyEvilMtfkr(){
     this.interval = setInterval(this.drawImage(), 1000)
 }
 
-function brick( ){
+function brick(  ){
     this.x = canvas.width
     this.y = 430
     this.width = 50
@@ -156,20 +156,20 @@ function brick( ){
     this.brick = new Image()
     this.brick.src = "images/obstacles/Bricks/brick_2.png"
     this.draw = function(){
-      this.x--
+      this.x-- 
       ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
     }
 }
 
 function Beer( ){
     this.x = canvas.width
-    this.y = 430
-    this.width = 50
-    this.height = 50
+    this.y = 370
+    this.width = 100
+    this.height = 130
     this.brick = new Image()
-    this.brick.src = "images/obstacles/Beer/Beer.png"
+    this.brick.src = "images/obstacles/Beer/modeloBeer.png"
     this.draw = function(){
-      this.x--
+      this.x-=20
       ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
     }
 }
@@ -182,33 +182,33 @@ function Drug(){
     this.brick = new Image()
     this.brick.src = "images/obstacles/Drugs/drugs2.png"
     this.draw = function(){
-      this.x--
+      this.x-=30
       ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
     }
 }
 
 function Cigarrete(){
     this.x = canvas.width
-    this.y = 370
+    this.y = 375
     this.width = 100
     this.height = 100
     this.brick = new Image()
     this.brick.src = "images/obstacles/Drugs/cigarrete2.png"
     this.draw = function(){
-      this.x--
+      this.x-=30
       ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
     }
 }
 
 function Porn(){
     this.x = canvas.width
-    this.y = 390
-    this.width = 70
-    this.height = 90
+    this.y = 380
+    this.width = 80
+    this.height = 100
     this.brick = new Image()
     this.brick.src = "images/obstacles/Drugs/playboy.png"
     this.draw = function(){
-      this.x--
+      this.x-=30
       ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
     }
 }
