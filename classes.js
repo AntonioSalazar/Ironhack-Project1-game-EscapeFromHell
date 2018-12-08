@@ -25,7 +25,7 @@ function gameArea(){
         ctx.font = "40px VT323";
         ctx.fillStyle = "white";
         ctx.fillText("You have 1 minute! try to escape!: " + this.counterTimer , 200, 50)
-        if (this.counterTimer === 60) {
+        if (this.counterTimer === 160) {
             ctx.font = "30px VT323";
             ctx.fillText("TIMES OVER!!!....BITCH!!!!",300,200);
             ctx.fillText("RUNNER WINS!!!!",360,250);
@@ -37,12 +37,12 @@ function gameArea(){
 
 
 function runningMotherFucker(){
-    this.x = 550;
-    this.y = 230;
+    this.x = 650;
+    this.y = 500;
     this.srcX;
     this.srcY;
-    this.sheetWidth = 2046;
-    this.sheetHeight = 250;
+    this.sheetWidth = 1498;
+    this.sheetHeight = 183;
     this.gravity = 5;
     this.yVelocity = 0; 
     this.xVelocity = 0;
@@ -53,7 +53,7 @@ function runningMotherFucker(){
     this.height = this.sheetHeight / this.frameCountRows;
     this.currentFrame = 0;  
     this.runner = new Image();
-    this.runner.src = "images/mariachi/mariachiSprite.png"
+    this.runner.src = "images/mariachi/mariachiSprite(2).png"
     this.runner.onload = function(){
                             this.drawImage()
                         }.bind(this)
@@ -63,7 +63,7 @@ function runningMotherFucker(){
     }
 
     this.hitBottom = function(){
-        this.ground = 230;
+        this.ground = 300;
         if (this.y  > this.ground) {
             this.isJumping = false;
             this.y = this.ground;
@@ -75,9 +75,10 @@ function runningMotherFucker(){
     this.drawImage = function(){
         this.updateFrame();
         ctx.drawImage(this.runner, this.srcX, this.srcY, this.width, this.height, this.x, this.y, this.width, this.height );
-        this.yVelocity -= 1;
+        this.yVelocity -= 3;
         this.y -= this.yVelocity;
         this.yVelocity *= 0.90;  
+        console.log(this.x);
     }
 
     this.updateFrame = function(){
@@ -88,7 +89,7 @@ function runningMotherFucker(){
     }
 
     this.isTouching = function(brick){
-        return (this.x + 40 < brick.x + brick.width) &&
+        return (this.x + 50 < brick.x + brick.width) &&
                (this.x + this.width - 40> brick.x)  &&
                (this.y < brick.y + brick.height) &&
                (this.y + this.height > brick.y)
@@ -101,11 +102,11 @@ function runningMotherFucker(){
 
 function tinyEvilMtfkr(){
     this.x = 50;
-    this.y = 200;
+    this.y = 250;
     this.srcX;
     this.srcY;
-    this.sheetWidth = 2046;
-    this.sheetHeight = 250;
+    this.sheetWidth = 1596;
+    this.sheetHeight = 195;
     
     this.frameCountCols = 8; // the number of frames in the frame sheet 
     this.frameCountRows = 1;
@@ -115,7 +116,7 @@ function tinyEvilMtfkr(){
     this.currentFrame = 0; 
     
     this.runner = new Image();
-    this.runner.src = "images/flyingDemonBought/sprite_devil2.png"
+    this.runner.src = "images/flyingDemonBought/sprite_devil2(1).png"
     this.runner.onload = function(){
         this.drawImage()
       }.bind(this)
@@ -129,10 +130,11 @@ function tinyEvilMtfkr(){
     this.drawImage = function(){
         this.updateFrame();
         ctx.drawImage(this.runner, this.srcX, this.srcY, this.width, this.height, this.x, this.y, this.width, this.height )
+        console.log(this.x);
     }
 
     this.evilWin = function(){
-        if (evil.x  === runner.x) {
+        if (evil.x + 190 >= runner.x ) {
             //console.log("you will be my dinner!");
             console.log("TIMES OVER!!!....BITCH!");
             ctx.font = "30px VT323";
