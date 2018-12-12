@@ -148,7 +148,7 @@ function tinyEvilMtfkr(){
     this.interval = setInterval(this.drawImage(), 1000)
 }
 
-function brick(  ){
+function brick( ){
     this.x = canvas.width
     this.y = 430
     this.width = 50
@@ -156,7 +156,7 @@ function brick(  ){
     this.brick = new Image()
     this.brick.src = "images/obstacles/Bricks/brick_2.png"
     this.draw = function(){
-      this.x-- 
+      this.x-=25 
       ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
     }
 }
@@ -169,7 +169,7 @@ function Beer( ){
     this.brick = new Image()
     this.brick.src = "images/obstacles/Beer/modeloBeer.png"
     this.draw = function(){
-      this.x-=20
+      this.x-=25
       ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
     }
 }
@@ -182,7 +182,7 @@ function Drug(){
     this.brick = new Image()
     this.brick.src = "images/obstacles/Drugs/drugs2.png"
     this.draw = function(){
-      this.x-=30
+      this.x-=25
       ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
     }
 }
@@ -195,7 +195,7 @@ function Cigarrete(){
     this.brick = new Image()
     this.brick.src = "images/obstacles/Drugs/cigarrete2.png"
     this.draw = function(){
-      this.x-=30
+      this.x-=25
       ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
     }
 }
@@ -208,7 +208,7 @@ function Porn(){
     this.brick = new Image()
     this.brick.src = "images/obstacles/Drugs/playboy.png"
     this.draw = function(){
-      this.x-=30
+      this.x-=25
       ctx.drawImage(this.brick, this.x, this.y, this.width, this.height)
     }
 }
