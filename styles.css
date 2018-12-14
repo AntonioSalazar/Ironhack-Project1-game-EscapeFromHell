@@ -76,3 +76,32 @@ span{
     justify-content: space-around;
     width: 400px;
 } 
+
+.key-images{
+    width: 30px;
+    height: 30px;
+    margin-top: 30px;
+}
+
+#keyboard-images{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    margin-right: 30px;
+}
+
+#content{
+    display: flex;
+}
+
+.red-arrow{
+    width: 90px;
+    margin-left: 10px;
+}
+
+.button-generates{
+    display: flex;
+    flex-direction: row;
+    height: 90px;
+}
